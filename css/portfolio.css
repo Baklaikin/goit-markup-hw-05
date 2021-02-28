@@ -17,7 +17,6 @@
 .btn {
   display: flex;
   justify-content: center;
-  padding-top: 94px;
   padding-bottom: 50px;
 }
 
@@ -39,6 +38,8 @@
   font-family: 'Roboto', sans-serif;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 94px;
+  padding-bottom: 94px;
 }
 
 .card-header {
@@ -79,6 +80,10 @@
   margin-top: 0;
 }
 
+.card-grid:nth-last-child(-n + 3) {
+  margin-bottom: 0;
+}
+
 .grid > .card-grid {
   background-color: #fff;
 }
@@ -93,6 +98,7 @@
 }
 
 .card-grid {
+  overflow: hidden;
   box-shadow: none;
   transition: box-shadow var(--transition);
 }
@@ -101,4 +107,39 @@
 .card-grid:focus {
   box-shadow: 1px 4px 6px 0px rgba(0, 0, 0, 0.16),
     0px 4px 4px 0px rgba(0, 0, 0, 0.06), 0px 1px 1px 0px rgba(0, 0, 0, 0.12);
+}
+
+.card-grid:hover .card-overlay,
+.card-grid:focus .card-overlay {
+  transform: translateY(0);
+}
+
+.card-grid .card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateY(100%);
+  transition: transform var(--transition);
+  background-color: rgba(33, 150, 243, 0.9);
+}
+
+.overlay-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 63px 24px;
+  transition: transform var(--transition);
+  color: var(--header-bg-color);
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+}
+
+.card-thumb {
+  position: relative;
+  overflow: hidden;
 }
